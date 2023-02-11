@@ -1,0 +1,9 @@
+<!--  Flask template to show that mashup is generated successfully and email is sent to {{email}} -->
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h1>Success!</h1>
+    <p>Your mashup is generated successfully and email is sent to {{ email_id }}.</p>
+    <p>Click <a href="{{url_for('index')}}">here</a> to go back to the home page.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!-- Flask template for data page -->
+{% extends 'base.html' %}
+{% block content %}
+<form action="/mashup" method="POST">
+<div id="table-wrapper">
+  <div id="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Views</th>
+          <th>Channel</th>
+          <th>Duration</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for _row in row_data %}
+        <tr>
+          <td><a href="{{_row[3]}}">{{_row[0]}}</a></td>
+          <td>{{_row[1]}}</td>
+          <td>{{_row[2]}}</td>
+          <td>{{_row[4]}}</td>
+          <td><input type="checkbox" name="selected" value="{{_row[5]}}"></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+    <!-- Button to get values of selected videos and pass them to app.py -->
+    <div class="button">
+      <input type="submit" value="Create mashup">
+    </div>
+</div>
+</form>
+{% endblock %}

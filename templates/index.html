@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/data" method="POST">
+    <div class="user__details">
+        <div class="input__box">
+            <span class="details">Singer Name</span>
+            <input type="text" placeholder="E.g: John Smith" id="singer" name="name" required>
+        </div>
+        <div class="input__box">
+            <span class="details">Your Email</span>
+            <input type="email" placeholder="johnsmith@gmail.com" id="email" name="email" required>
+        </div>
+        <div class="input__box">
+            <span class="details">Total videos </span>
+            <input type="number" placeholder="5" id="max_results" name="max_results" required>
+        </div>
+        <div class="input__box">
+            <span class="detail">Duration for each video (seconds)</span>
+            <input type="number" placeholder="40" id="duration" name="duration" required>
+        </div>
+
+    </div>
+    <div class="button">
+        <input type="submit" value="Get videos">
+    </div>
+</form>
+{% endblock %}
